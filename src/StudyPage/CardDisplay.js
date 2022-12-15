@@ -12,7 +12,7 @@ function CardDisplay({ deck }) {
         const abortController = new AbortController();
         setCard({...cards[cardId-1]});
         return () => abortController.abort();
-    }, [cardId]);
+    }, [cards, cardId]);
     
     const handleFlip = () => {
         setFlipped(true);

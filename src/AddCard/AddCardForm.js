@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import ErrorMessage from "../ErrorMessage";
 import { readDeck, createCard } from "../utils/api";
+import CardForm from "../CardForm";
 
 
 //responsible for setting header and form portion of adding new card to existing deck
-function AddCardForm({deck}) {
+function AddCardForm({deck, deckId}) {
     const [currentDeck, setCurrentDeck] = useState({...deck});
     const initialFormState = { front: "", back: "", deckId: deck.id};
     const [formData, setFormData] = useState({...initialFormState});
@@ -12,9 +13,9 @@ function AddCardForm({deck}) {
 
     useEffect(() => {
         const abortController = new AbortController();
-        readDeck(deck.id, abortController.signal).then(setCurrentDeck).catch(setError);
+        readDeck(deckId, abortController.signal).then(setCurrentDeck).catch(setError);
         return () => abortController.abort();
-    }, [deck.id]);
+    }, [deckId]);
 
     const handleChange = ({target}) => {
         setFormData({...formData, [target.name]: target.value})
@@ -33,18 +34,7 @@ function AddCardForm({deck}) {
     return (
         <div className="container mb-2">
             <h3> {deck.name}: Add Card</h3>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                <label htmlFor="front">Front</label>
-                <textarea className="form-control" name="front" placeholder="Front side of card." rows={3} value={formData.front} onChange={handleChange}></textarea>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="back">Back</label>
-                    <textarea className="form-control" name="back" placeholder="Back side of card." rows={3} value={formData.back} onChange={handleChange}></textarea>
-                </div>
-                <a href={`/decks/${deck.id}`} className="btn btn-secondary mr-2">Done</a>
-                <button className="btn btn-primary" type="submit">Save</button>
-            </form>
+            <CardForm handleSubmit={handleSubmit} handleChange={handleChange} deckId={deckId} formData={formData} />
         </div>
     );
 }

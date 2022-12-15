@@ -8,6 +8,7 @@ import ErrorMessage from "../ErrorMessage";
 function DeckList() {
     const [decks, setDecks] = useState(null);
     const [error, setError] = useState(undefined);
+    
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -21,7 +22,7 @@ function DeckList() {
     if(!decks) {
         return <h2>Loading...</h2>;
     } else {
-        const list = decks.map((deck) => <DeckView key={deck.id} deck={deck} />)
+        const list = decks.map((deck) => <DeckView key={deck.id} deck={deck} />);
 
         return (
             <div className="container mb-2">

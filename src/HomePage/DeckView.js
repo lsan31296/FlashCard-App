@@ -1,16 +1,12 @@
 //this component solely responsible for displaying the deck with a deiscription and three buttons, view, study, delete
-
 import { deleteDeck } from "../utils/api";
-import { useHistory } from "react-router-dom";
 
 function DeckView({ deck = { cards: [] } }) {
-    const history = useHistory();
-
     const handleDelete = async (deckId) => {
         if (window.confirm("Delete this deck?\nYou will not be able to recover it.")) {
             await deleteDeck(deck.id);
         }
-        history.push("/");
+        window.location.reload();
     }; 
 
     return (

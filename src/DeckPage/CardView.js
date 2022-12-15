@@ -5,6 +5,7 @@ function CardView({ card, url }) {
         if(window.confirm("Delete this card?\nYou will not be able to recover it.")) {
             await deleteCard(card.id);
         }
+        window.location.reload();
     };
 
     return (

@@ -15,7 +15,7 @@ function CreateDeckForm () {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDeck(formData).then((response)=> history.push(`decks/${response.id}`)).catch(setError);
+        createDeck(formData).then((response)=> history.push(`/decks/${response.id}`)).catch(setError);
     };
     if(error) {
         <ErrorMessage error={error} />

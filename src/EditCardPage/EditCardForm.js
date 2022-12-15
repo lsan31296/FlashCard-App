@@ -2,6 +2,7 @@ import { useState } from "react";
 import ErrorMessage from "../ErrorMessage";
 import { updateCard } from "../utils/api";
 import { useHistory } from "react-router-dom";
+import CardForm from "../CardForm";
 
 //responsible for rendering Edit Card Form
 function EditCardForm({ card, setCard, deckId }) {
@@ -24,18 +25,7 @@ function EditCardForm({ card, setCard, deckId }) {
     return (
         <div className="container mb-2">
             <h1>Edit Card</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="front">Front</label>
-                    <input className="form-control" name="front" value={formData.front} onChange={handleChange}></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="back">Back</label>
-                    <textarea className="form-control" name="back" value={formData.back} onChange={handleChange} rows={3}></textarea>
-                </div>
-                <a href={`/decks/${deckId}`} className="btn btn-secondary mr-2">Cancel</a>
-                <button className="btn btn-primary" type="submit">Submit</button>
-            </form>
+            <CardForm handleSubmit={handleSubmit} handleChange={handleChange} deckId={deckId} formData={formData} />
         </div>
     );
 }

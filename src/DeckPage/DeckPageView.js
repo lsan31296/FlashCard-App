@@ -11,6 +11,7 @@ function DeckPageView({deck}) {
         if(window.confirm("Delete this deck?\nYou will not be able to recover it.")) {
             await deleteDeck(deck.id);
         }
+        window.location.reload();
     };
     const cardList = (deck.cards).map((card) => <CardView key={card.id} card={card} url={url}/>);
 

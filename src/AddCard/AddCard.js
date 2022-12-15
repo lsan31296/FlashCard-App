@@ -27,7 +27,7 @@ function AddCard() {
         return (
             <div>
                 <AddCardNav deck={deck} />
-                <AddCardForm deck={deck} />
+                <AddCardForm deck={deck} deckId={deckId}/>
             </div>
         );
     }

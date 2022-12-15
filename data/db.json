@@ -12,7 +12,7 @@
     },
     {
       "name": "Sample Deck",
-      "description": "Sample Deck to see if CreateDeckFrom works. Edited to see if editing works in Edit Deck Screen.",
+      "description": "Sample Deck to see if the Submit button works.",
       "id": 3
     }
   ],
@@ -65,18 +65,6 @@
       "back": "newcard2",
       "deckId": 2,
       "id": 9
-    },
-    {
-      "front": "Practice Card Front 1. Editing practice 3.",
-      "back": "Practice Card Back 1. Editing practice 3.",
-      "deckId": 3,
-      "id": 10
-    },
-    {
-      "front": "Practice Card Front 2. Edited 1.",
-      "back": "Practice Card Back 2. Edited 1.",
-      "deckId": 3,
-      "id": 11
     }
   ]
 }
