@@ -4,7 +4,7 @@ function CardForm({ handleSubmit, deckId, formData, handleChange }) {
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="front">Front</label>
-                <input className="form-control" name="front" value={formData.front} onChange={handleChange}></input>
+                <textarea className="form-control" name="front" value={formData.front} onChange={handleChange} rows={2}></textarea>
             </div>
             <div className="form-group">
                 <label htmlFor="back">Back</label>
@@ -12,7 +12,7 @@ function CardForm({ handleSubmit, deckId, formData, handleChange }) {
             </div>
             <a href={`/decks/${deckId}`} className="btn btn-secondary mr-2">Cancel</a>
             <button className="btn btn-primary" type="submit">Submit</button>
-    </form>
+        </form>
     );
 }
 export default CardForm;
