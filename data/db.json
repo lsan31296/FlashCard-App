@@ -9,16 +9,6 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "name": "Sample Deck",
-      "description": "Sample Deck to see if the Submit button works.",
-      "id": 3
-    },
-    {
-      "name": "Sample Deck 2",
-      "description": "Sample Deck 2 Description",
-      "id": 4
     }
   ],
   "cards": [
@@ -70,24 +60,6 @@
       "back": "newcard2",
       "deckId": 2,
       "id": 9
-    },
-    {
-      "front": "Sample Card 1. Testing edit screen.",
-      "back": "Sample Card Back 1. Testing submit button.",
-      "deckId": 3,
-      "id": 10
-    },
-    {
-      "front": "Testing Add Card 1",
-      "back": "Testing Add Card 1",
-      "deckId": 3,
-      "id": 11
-    },
-    {
-      "front": "Testing Add Card 2",
-      "back": "Testing Add Card 2",
-      "deckId": 3,
-      "id": 12
     }
   ]
 }
